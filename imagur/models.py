@@ -3,7 +3,7 @@ import base64
 
 
 class Comment(models.Model):
-    client_id = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='comments')
+    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='comments')
     post_id = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='comments')
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
@@ -13,7 +13,7 @@ class Comment(models.Model):
 
 
 class Favorite(models.Model):
-    client_id = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='favorites')
+    owner = models.ForeignKey('auth.User', on_delete=models.CASCADE, related_name='favorites')
     post_id = models.ForeignKey('Post', on_delete=models.CASCADE, related_name='favorites')
     liked_at = models.DateTimeField(auto_now_add=True)
 
@@ -25,7 +25,7 @@ class Post(models.Model):
     title = models.CharField(max_length=30)
     image = models.TextField(blank=True)
     # tags =
-    creator_id = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
+    owner = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def set_image(self, data):

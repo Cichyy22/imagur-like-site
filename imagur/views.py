@@ -12,6 +12,9 @@ class PostList(generics.ListCreateAPIView):
     serializer_class = PostsSerializer
     name = 'post-list'
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
@@ -24,6 +27,9 @@ class CommentList(generics.ListCreateAPIView):
     serializer_class = CommentsSerializer
     name = 'comment-list'
 
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
+
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Comment.objects.all()
@@ -35,6 +41,9 @@ class FavoriteList(generics.ListCreateAPIView):
     queryset = Favorite.objects.all()
     serializer_class = FavoritesSerializer
     name = 'favorite-list'
+
+    def perform_create(self, serializer):
+        serializer.save(owner=self.request.user)
 
 
 class FavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
