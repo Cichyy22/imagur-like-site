@@ -5,9 +5,12 @@ from rest_framework.reverse import reverse
 from imagur.serializers import PostsSerializer, CommentsSerializer, FavoritesSerializer, UserSerializer
 from imagur.models import Post, Comment, Favorite
 from django.contrib.auth.models import User
+from rest_framework import permissions
+from .custompermission import IsCurrentUserOwnerOrReadOnly
 
 
 class PostList(generics.ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
     queryset = Post.objects.all()
     serializer_class = PostsSerializer
     name = 'post-list'
@@ -17,12 +20,14 @@ class PostList(generics.ListCreateAPIView):
 
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
     queryset = Post.objects.all()
     serializer_class = PostsSerializer
     name = 'post-detail'
 
 
 class CommentList(generics.ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
     queryset = Comment.objects.all()
     serializer_class = CommentsSerializer
     name = 'comment-list'
@@ -32,12 +37,14 @@ class CommentList(generics.ListCreateAPIView):
 
 
 class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
     queryset = Comment.objects.all()
     serializer_class = CommentsSerializer
     name = 'comment-detail'
 
 
 class FavoriteList(generics.ListCreateAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
     queryset = Favorite.objects.all()
     serializer_class = FavoritesSerializer
     name = 'favorite-list'
@@ -47,6 +54,7 @@ class FavoriteList(generics.ListCreateAPIView):
 
 
 class FavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
     queryset = Favorite.objects.all()
     serializer_class = FavoritesSerializer
     name = 'favorite-detail'

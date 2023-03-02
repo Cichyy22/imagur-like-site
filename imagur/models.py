@@ -22,7 +22,7 @@ class Favorite(models.Model):
 
 
 class Post(models.Model):
-    title = models.CharField(max_length=30)
+    title = models.CharField(max_length=60)
     image = models.TextField(blank=True)
     # tags =
     owner = models.ForeignKey('auth.User', related_name='posts', on_delete=models.CASCADE)
