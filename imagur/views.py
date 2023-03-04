@@ -13,6 +13,9 @@ class PostList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
     queryset = Post.objects.all()
     serializer_class = PostsSerializer
+    ordering_fields = ['created_at', 'favorites']
+    filter_fields = ['title']
+    search_fields = ['title']
     name = 'post-list'
 
     def perform_create(self, serializer):
