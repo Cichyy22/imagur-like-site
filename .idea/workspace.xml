@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce203ff1-a04a-4537-bf33-5fcdd5a28e30" name="Changes" comment="" />
+    <list default="true" id="ce203ff1-a04a-4537-bf33-5fcdd5a28e30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/imagur/custompermissiontwo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/components/Image.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/components/Image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/components/Image.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/components/Image.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/pages/Favourites.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/pages/Favourites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/pages/NewImg.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/pages/NewImg.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagur/custompermission.py" beforeDir="false" afterPath="$PROJECT_DIR$/imagur/custompermission.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagur/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/imagur/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imagurproject/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/imagurproject/settings.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

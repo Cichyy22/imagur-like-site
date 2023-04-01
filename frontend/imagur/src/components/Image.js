@@ -1,7 +1,9 @@
+
+import classes from './Image.module.css';
 function Image(props) {
     return (
       <div >
-        <img src={`data:image/png;base64, ${props.image}`} alt={props.title} />
+        <img src={props.image} alt={props.title} />
       </div>
     );
   }

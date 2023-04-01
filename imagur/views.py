@@ -6,7 +6,7 @@ from imagur.serializers import PostsSerializer, CommentsSerializer, FavoritesSer
 from imagur.models import Post, Comment, Favorite
 from django.contrib.auth.models import User
 from rest_framework import permissions
-from .custompermission import IsCurrentUserOwnerOrReadOnly
+from .custompermission import IsCurrentUserOwnerOrReadOnly, IsCurrentUserOwnerOrHidden
 
 
 class PostList(generics.ListCreateAPIView):
@@ -47,7 +47,7 @@ class CommentDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class FavoriteList(generics.ListCreateAPIView):
-    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrHidden]
     queryset = Favorite.objects.all()
     serializer_class = FavoritesSerializer
     name = 'favorite-list'

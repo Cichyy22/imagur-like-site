@@ -1,6 +1,6 @@
 import { json, redirect } from 'react-router-dom';
 import AddForm from '../components/AddForm';
-
+import Cookies from 'js-cookie';
 
 function AddPage() {
   
@@ -16,15 +16,14 @@ function AddPage() {
     console.log(data)
     const postData = { 
       title: data.get('title'),
-      image: data.get('base64File'),
-      token: localStorage.getItem('token'),
-      owner: localStorage.getItem('name')
+      image: data.get('base64File')
     };
     console.log(postData)
     const response = await fetch('http://127.0.0.1:8000/posts', {
       method: 'POST',
       headers: {
-        "X-CSRFToken": localStorage.getItem('token'),
+        'Authorization': 'Token ' + localStorage.getItem('token'),
+        "X-CSRFToken": Cookies.get('csrftoken'),
         "Accept": "application/json",
         "Content-Type": "application/json"
       },
