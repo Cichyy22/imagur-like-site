@@ -1,9 +1,8 @@
 import PageContent from '../components/PageContent';
 import { useState, useEffect } from 'react';
-import Image from '../components/Image';
 import './Home.css';
 
-function HomePage() {
+function ImgPage() {
     const [imageFetch, setImage] = useState([]);
 
     useEffect(() => {
@@ -24,15 +23,9 @@ function HomePage() {
 
   return (
     <PageContent >
-      {/* <div className="grid-container"> */}
-      <ul className="grid-container">
-         {imageFetch.map((movie) => (
-           <li key={movie.pk}><Image pk={movie.pk} image={movie.image} title={movie.title}  className="grid-item" /></li>
-         ))}
-       </ul>
-       {/* </div> */}
+       <img src={imageFetch.image} alt={imageFetch.title} />
     </PageContent>
   );
 }
 
-export default HomePage;
+export default ImgPage;
