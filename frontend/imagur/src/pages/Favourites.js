@@ -11,7 +11,7 @@ function FavPage() {
  
     useEffect(() => {
     // Fetch the Payroll Data related to the logged in User
-    fetch('http://127.0.0.1:8000/favorite', {
+    fetch('http://127.0.0.1:8000/favorite?owner_username=Ad', {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -23,9 +23,9 @@ function FavPage() {
       });
       
   }, []);
-  const fav = fetchData.filter( fav => fav.owner === localStorage.getItem('owner'))
-  const urls = fav.map(a => a.post_id);
-  console.log(urls)
+  // const fav = fetchData.filter( fav => fav.owner === localStorage.getItem('owner'))
+  // const urls = fav.map(a => a.post_id);
+  console.log(fetchData)
   return (
     <PageContent >
       {/* <div className="grid-container"> */}

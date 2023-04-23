@@ -1,13 +1,13 @@
 import PageContent from '../components/PageContent';
 import { useState, useEffect } from 'react';
 import './Home.css';
+import { useParams} from "react-router-dom";
 
 function ImgPage() {
     const [imageFetch, setImage] = useState([]);
-
+    const params = useParams()
     useEffect(() => {
-    // Fetch the Payroll Data related to the logged in User
-    fetch('http://127.0.0.1:8000/posts', {
+    fetch('http://127.0.0.1:8000/posts/' + params.imgId, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -17,9 +17,8 @@ function ImgPage() {
       .then((data) => {
         setImage(data);
       });
-  }, []);
+  }, [params]);
 
-    console.log(imageFetch);
 
   return (
     <PageContent >

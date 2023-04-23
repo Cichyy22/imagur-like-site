@@ -55,6 +55,12 @@ class FavoriteList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+    def filter_queryset(self, queryset):
+        owner_username = self.request.query_params.get('owner__username', None)
+        if owner_username is not None:
+            queryset = queryset.filter(owner=owner_username)
+        return queryset
+
 
 class FavoriteDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly, IsCurrentUserOwnerOrReadOnly]
