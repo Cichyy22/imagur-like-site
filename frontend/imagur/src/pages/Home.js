@@ -5,6 +5,7 @@ import './Home.css';
 
 function HomePage() {
     const [imageFetch, setImage] = useState([]);
+    
 
     useEffect(() => {
     // Fetch the Payroll Data related to the logged in User
@@ -18,6 +19,7 @@ function HomePage() {
       .then((data) => {
         setImage(data);
       });
+      
   }, []);
 
     console.log(imageFetch);

@@ -1,40 +1,40 @@
 import PageContent from '../components/PageContent';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 import Image from '../components/Image';
 import './Home.css';
 
 function FavPage() {
     const [fetchData, setFetchData] = useState([]);
-    const [imageFetch, setImage] = useState([]);
 
     
  
     useEffect(() => {
+      async function fetchData() {
     // Fetch the Payroll Data related to the logged in User
-    fetch('http://127.0.0.1:8000/favorite?owner_username=Ad', {
+      const response = await fetch('http://127.0.0.1:8000/favorite?owner__username=' + localStorage.getItem('owner'), {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => res.json())
-      .then((data) => {
-        setFetchData(data);
-      });
+      const json = await response.json();
+      const urlsToFetch = json.map(item => item.post_id);
+      const additionalDataPromises = urlsToFetch.map(url => fetch(url).then(res => res.json()));
+      const additionalData = await Promise.all(additionalDataPromises); // poczekaj na pobranie wszystkich danych
+      setFetchData(additionalData);
       
+  }
+  fetchData()
   }, []);
-  // const fav = fetchData.filter( fav => fav.owner === localStorage.getItem('owner'))
-  // const urls = fav.map(a => a.post_id);
   console.log(fetchData)
+  
   return (
     <PageContent >
-      {/* <div className="grid-container"> */}
-      {/* <ul className="grid-container">
-         {imageFetch.map((movie) => (
-           <li key={movie.pk}><Image image={movie.image} title={movie.title}  className="grid-item" /></li>
+      <ul className="grid-container">
+         {fetchData.map((movie) => (
+           <li key={movie.pk}><Image pk={movie.pk} image={movie.image} title={movie.title}  className="grid-item" /></li>
          ))}
-       </ul> */}
-       {/* </div> */}
+       </ul>
     </PageContent>
   );
 }

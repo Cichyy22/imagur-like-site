@@ -1,5 +1,4 @@
 import { json, redirect } from 'react-router-dom';
-
 import AuthForm from '../components/AuthForm';
 
 function AuthenticationPage() {
@@ -39,15 +38,26 @@ export async function action({ request }) {
   }
 
   
+  
   const resData = await response.json();
   
   const token = resData.key;
   console.log(token)
   localStorage.setItem('token', token);
-  localStorage.setItem('owner', data.get('username'));
   const expiration = new Date()
   expiration.setHours(expiration.getHours()+1);
   localStorage.setItem('expiration', expiration.toISOString())
+  const user  = await fetch('http://127.0.0.1:8000/dj-rest-auth/user/ ', {
+      method: "GET",
+      headers: {
+        'Authorization': 'Token ' + localStorage.getItem('token'),
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+    })
+  const username = await user.json();
+  
+  localStorage.setItem('owner', username.pk);
   return redirect('/');
   }
   if (mode === 'register'){
@@ -87,16 +97,30 @@ export async function action({ request }) {
   if (!response2.ok) {
     throw json({ message: 'Could not authenticate user.' }, { status: 500 });
   }
+  
+
+  
 
   
   const resData = await response2.json();
   const token = resData.key;
   console.log(token)
+  
   localStorage.setItem('token', token);
-  localStorage.setItem('owner', data.get('username'));
+  
   const expiration = new Date()
   expiration.setHours(expiration.getHours()+1);
   localStorage.setItem('expiration', expiration.toISOString())
+  const user  = await fetch('http://127.0.0.1:8000/dj-rest-auth/user/ ', {
+      method: "GET",
+      headers: {
+        'Authorization': 'Token ' + localStorage.getItem('token'),
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      },
+    })
+  const username = await user.json();
+  localStorage.setItem('owner', username.pk);
   return redirect('/');
     }
 
