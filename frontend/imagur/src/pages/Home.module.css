@@ -1,22 +1,22 @@
-.grid-container {
+.grid_container {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 20px;
   }
   
   @media (max-width: 768px) {
-    .grid-container {
+    .grid_container {
       grid-template-columns: repeat(3, 1fr);
     }
   }
   
   @media (max-width: 480px) {
-    .grid-container {
+    .grid_container {
       grid-template-columns: repeat(2, 1fr);
     }
   }
   
-  .grid-item {
+  .grid_item {
     width: 100%;
     height: auto;
     max-width: 100%;

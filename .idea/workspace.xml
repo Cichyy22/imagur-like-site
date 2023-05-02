@@ -3,9 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="ce203ff1-a04a-4537-bf33-5fcdd5a28e30" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/pages/Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/pages/Auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/components/MainNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/components/MainNavigation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/imagur/src/pages/Favourites.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/pages/Favourites.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/pages/Home.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/imagur/src/pages/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/pages/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/imagur/src/pages/ImgPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/imagur/src/pages/ImgPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,13 +37,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/okkub/OneDrive/Pulpit/Imagur/backend/imagurproject&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/okkub/OneDrive/Pulpit/Imagur/backend/imagurproject"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\okkub\OneDrive\Pulpit\Imagur\backend\imagurproject" />

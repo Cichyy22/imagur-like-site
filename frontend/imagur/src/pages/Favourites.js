@@ -1,7 +1,7 @@
 import PageContent from '../components/PageContent';
 import { useState, useEffect } from 'react';
 import Image from '../components/Image';
-import './Home.css';
+import classes from  './Home.module.css';
 
 function FavPage() {
     const [fetchData, setFetchData] = useState([]);
@@ -30,9 +30,9 @@ function FavPage() {
   
   return (
     <PageContent >
-      <ul className="grid-container">
+      <ul className={classes.grid_container}>
          {fetchData.map((movie) => (
-           <li key={movie.pk}><Image pk={movie.pk} image={movie.image} title={movie.title}  className="grid-item" /></li>
+           <li key={movie.pk}><Image pk={movie.pk} image={movie.image} title={movie.title}  className={classes.grid_item} /></li>
          ))}
        </ul>
     </PageContent>

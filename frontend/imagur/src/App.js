@@ -29,6 +29,7 @@ const router = createBrowserRouter([
       {
         path: '/post/:imgId',
         element: <ImgPage />,
+        loader: tokenLoader
       }
     ],
   },

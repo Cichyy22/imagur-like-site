@@ -5,7 +5,6 @@ import classes from './MainNavigation.module.css';
 
 function MainNavigation() {
   const token = useLoaderData('root')
-
   return (
     <header className={classes.header}>
       <nav>
